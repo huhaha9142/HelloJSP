@@ -33,7 +33,6 @@ public class HelloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, 
 			HttpServletResponse resp) throws ServletException, IOException {
 		//	요청 인코딩, 응답 페이지 설정 -> Filter로 위임
-		
 		//	요청 데이터 인코딩 설정
 //		req.setCharacterEncoding("UTF-8");
 		//	페이지 응답 설정
