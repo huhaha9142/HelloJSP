@@ -14,8 +14,8 @@
 		method: 요청 방식 -->
 	<form action="<%= request.getContextPath() %>/emaillist/insert.jsp"
 		method="POST">
-		<label for="Last_name" >성</label>
-		<input type="text" name="Last_name" id="Last_name" /><br />
+		<label for="last_name" >성</label>
+		<input type="text" name="last_name" id="last_name" /><br />
 		<label for="first_name">이름</label>
 		<input type="text" name="first_name" id="first_name" /><br />
 		<label for="email">이메일</label>
