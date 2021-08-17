@@ -90,7 +90,7 @@ public class UserDaoImpl implements UserDao {
 		try {
 			conn = getConnection();
 			//	실행 계획 준비
-			String sql = "INSERT INTO users (no, name, password, email, gender"	+ 
+			String sql = "INSERT INTO users (no, name, password, email, gender)"	+ 
 					" VALUES(seq_users_pk.NEXTVAL, ?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			//	파라미터 바인딩

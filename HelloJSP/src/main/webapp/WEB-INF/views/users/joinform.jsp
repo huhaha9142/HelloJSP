@@ -10,7 +10,7 @@
 	
 	<h1>Join Form</h1>
 	
-	<form method="post"
+	<form method="POST"
 		action="<%= request.getContextPath() %>/users">
 		<input type="hidden" name="a" value="join">
 		<label for="name">이름</label>
