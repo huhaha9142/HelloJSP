@@ -19,16 +19,15 @@ import com.example.emaillist.vo.EmailVo;
 public class EmaillistServlet extends HttpServlet {
 
 	@Override
-	protected void doGet(HttpServletRequest req, 
-			HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//	파라미터 확인
 		//	a=form이면 가입폼으로 FORWARD
 		String actionName = req.getParameter("a");
 		
 		if ("form".equals(actionName)) {
 			//	a=form이면
-			RequestDispatcher rd = getServletContext()
-					.getRequestDispatcher("/WEB-INF/views/emaillist/form.jsp");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/views/emaillist/form.jsp");
+					
 			
 			//	전달
 			rd.forward(req,  resp);
@@ -43,8 +42,8 @@ public class EmaillistServlet extends HttpServlet {
 		//	JSP로 요청을 전달(FORWARD)
 		
 		//	Dispatcher 확보
-		RequestDispatcher rd = getServletContext()
-				.getRequestDispatcher("/WEB-INF/views/emaillist/index.jsp");
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/WEB-INF/views/emaillist/index.jsp");
+				
 		//	FORWARD
 		rd.forward(req, resp);
 		}
@@ -57,7 +56,7 @@ public class EmaillistServlet extends HttpServlet {
 		
 		if ("add".equals(actionName)) {	//	a=add
 			String firstName = req.getParameter("first_name");
-			String lastName = req.getParameter("laste_name");
+			String lastName = req.getParameter("last_name");
 			String email = req.getParameter("email");
 			
 			//	VO 객체 생성
