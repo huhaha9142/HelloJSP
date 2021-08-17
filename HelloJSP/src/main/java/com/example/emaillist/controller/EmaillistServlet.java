@@ -21,6 +21,18 @@ public class EmaillistServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, 
 			HttpServletResponse resp) throws ServletException, IOException {
+		//	파라미터 확인
+		//	a=form이면 가입폼으로 FORWARD
+		String actionName = req.getParameter("a");
+		
+		if ("form".equals(actionName)) {
+			//	a=form이면
+			RequestDispatcher rd = getServletContext()
+					.getRequestDispatcher("/WEB-INF/views/emaillist/form.jsp");
+			
+			//	전달
+			rd.forward(req,  resp);
+		} else {
 		//	DAO에서 목록을 받아서 jsp로 전달
 		EmaillistDao dao = new EmaillistDaoImpl();
 		List<EmailVo> list = dao.getList();
@@ -35,6 +47,19 @@ public class EmaillistServlet extends HttpServlet {
 				.getRequestDispatcher("/WEB-INF/views/emaillist/index.jsp");
 		//	FORWARD
 		rd.forward(req, resp);
+		}
+
 	}
 
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String actionName = req.getParameter("a");
+		
+		if ("add".equals(actionName)) {
+			//	INSERT 처리
+		} else {
+			doGet(req, resp);
+		}
+		
+	}
 }
