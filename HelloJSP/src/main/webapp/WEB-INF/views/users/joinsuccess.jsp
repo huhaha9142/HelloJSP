@@ -4,5 +4,3 @@
 	<jsp:param value="가입 성공" name="message"/>
 </jsp:include>
 <%@ include file="/WEB-INF/views/includes/footer.jsp" %>
-</body>
-</html>

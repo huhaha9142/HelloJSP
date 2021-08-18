@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="/WEB-INF/views/includes/header.jsp"/>
 	<jsp:param value="로그인" name="message" /> 
+</jsp:include>
 
 	<form method="POST"
 		action="<%= request.getContextPath() %>/users">
